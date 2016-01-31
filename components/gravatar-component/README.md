@@ -1,4 +1,4 @@
-# <gravatar-component>
+# gravatar-component
 
 An element providing a wrapper for quick gravatar images / urls.
 
