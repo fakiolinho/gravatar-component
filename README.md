@@ -1,17 +1,12 @@
-# <gravatar-component>
+# gravatar-component
 
 An element providing a wrapper for quick gravatar images / urls.
 
-## Dependencies
+## How to Install
 
-Element dependencies are managed via [Bower](http://bower.io/). You can
-install that via:
-
-    npm install -g bower
-
-Then, go ahead and download the element's dependencies:
-
-    bower install
+```
+bower i gravatar-component -S
+```
 
 ## Usage
 
