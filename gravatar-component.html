@@ -1,0 +1,123 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+An element providing a wrapper for quick gravatar images / urls.
+
+Examples:
+
+    <gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"></gravatar-component>
+
+    <gravatar-component email="some@email.com" is-url default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+
+    <gravatar-component email="marios@mist.io" is-url secure></gravatar-component>
+
+    <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
+
+    <gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"></gravatar-component>
+
+@demo
+-->
+<dom-module id="gravatar-component">
+
+    <style>
+        :host {
+            display: block;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <template>
+        <template is="dom-if" if="[[!isUrl]]">
+            <img src="[[url]]" alt="[[altText]]" />
+        </template>
+
+        <template is="dom-if" if="[[isUrl]]">
+            [[url]]
+        </template>
+    </template>
+
+    <script type="text/javascript" src="../js-md5/build/md5.min.js"></script>
+
+    <script>
+        Polymer({
+
+            is: 'gravatar-component',
+
+            properties: {
+                // The email address
+                email: {
+                    type: String,
+                    value: null
+                },
+
+                // Hashed Email
+                hash: {
+                    type: String,
+                    value: null
+                },
+
+                // Default image
+                defaultImage: {
+                    type: String,
+                    value: null
+                },
+
+                // Image's alternative text
+                altText: {
+                    type: String,
+                    value: null
+                },
+
+                // Size in pixels, defaults to 80px [ 1 - 2048 ]
+                size: {
+                    type: Number,
+                    value: function() {
+                        return window.devicePixelRatio > 1.5 ? 160 : 80;
+                    }
+                },
+
+                // Default imageset to use if not custom defaultImage is provided [ 404 | mm | identicon | monsterid | wavatar ]
+                imageSet: {
+                    type: String,
+                    value: 'mm'
+                },
+
+                // Maximum rating (inclusive) [ g | pg | r | x ]
+                rating: {
+                    type: String,
+                    value: 'g'
+                },
+
+                // True for Https and False for Http
+                secure: {
+                    type: Boolean,
+                    value: false
+                },
+
+                // Gravatar Url
+                url: {
+                    type: String,
+                    computed: '_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)'
+                },
+
+                // False to return a complete IMG tag True for just the URL
+                isUrl: {
+                    type: Boolean,
+                    value: false
+                }
+            },
+
+            _computeUrl: function(email, hash, size, imageSet, rating, defaultImage, secure) {
+                var url = [
+                    secure ? 'https://www.gravatar.com/avatar/' : 'http://www.gravatar.com/avatar/',
+                    hash || md5(email.trim().toLowerCase()),
+                    '.jpg?s=' + size,
+                    '&d=' + (defaultImage ? encodeURIComponent(defaultImage) : imageSet),
+                    '&r=' + rating
+                ].join('');
+
+                return url;
+            }
+        });
+    </script>
+</dom-module>
