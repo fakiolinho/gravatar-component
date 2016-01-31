@@ -1,7 +1,6 @@
-# gravatar-component
+# <gravatar-component>
 
-Polymer elements.
-
+An element providing a wrapper for quick gravatar images / urls.
 
 ## Dependencies
 
@@ -14,43 +13,52 @@ Then, go ahead and download the element's dependencies:
 
     bower install
 
+## Usage
 
-## Playing With Your Element
+1.Simple gravatar image with an alt text:
 
-If you wish to work on your element in isolation, we recommend that you use
-[Polyserve](https://github.com/PolymerLabs/polyserve) to keep your element's
-bower dependencies in line. You can install it via:
+```javascript
+<gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"></gravatar-component>
+```
 
-    npm install -g polyserve
+2.Simple gravatar url with a custom fallback image:
 
-And you can run it via:
+```javascript
+<gravatar-component email="some@email.com" is-url default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+```
 
-    polyserve
+3.Simple secure gravatar url:
 
-Once running, you can preview your element at
-`http://localhost:8080/components/seed-element/`, where `seed-element` is the name of the directory containing it.
+```javascript
+<gravatar-component email="marios@mist.io" is-url secure></gravatar-component>
+```
 
+4.Simple gravatar image with monsterid images as fallbak
 
-## Testing Your Element
+```javascript
+<gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
+```
 
-Simply navigate to the `/test` directory of your element to run its tests. If
-you are using Polyserve: `http://localhost:8080/components/seed-element/test/`
+5.Simple gravatar image using hash
 
-### web-component-tester
+```javascript
+<gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"></gravatar-component>
+```
 
-The tests are compatible with [web-component-tester](https://github.com/Polymer/web-component-tester).
-Install it via:
+## Options
 
-    npm install -g web-component-tester
+| Attribute | Type | Default Value | Description |
+| --- | --- | --- | --- |
+| **altText** | String | null | Image's alternate text |
+| **defaultImage** | String | null | Custom default image as fallback |
+| **email** | String | null | The email address |
+| **hash** | String | null | Hashed Email |
+| **imageSet** | String | mm | Default imageset to use if not custom defaultImage is provided [ 404 | mm | identicon | monsterid | wavatar ] |
+| **isUrl** | Boolean | false | False to return a complete IMG tag True for just the URL |
+| **rating** | String | g | Maximum rating (inclusive) [ g | pg | r | x ] |
+| **secure** | Boolean | false | True for Https and False for Http |
+| **size** | Number | 80 | Size in pixels, defaults to 80px [ 1 - 2048 ] |
 
-Then, you can run your tests on _all_ of your local browsers via:
+## License
 
-    wct
-
-#### WCT Tips
-
-`wct -l chrome` will only run tests in chrome.
-
-`wct -p` will keep the browsers alive after test runs (refresh to re-run).
-
-`wct test/some-file.html` will test only the files you specify.
+[MIT](http://opensource.org/licenses/MIT) license.
