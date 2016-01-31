@@ -8,6 +8,9 @@ An element providing a wrapper for quick gravatar images / urls.
 bower i gravatar-component -S
 ```
 
+## Demo
+Check [here](http://fakiolinho.github.io/gravatar-component/components/gravatar-component/)
+
 ## Usage
 
 1.Simple gravatar image with an alt text:

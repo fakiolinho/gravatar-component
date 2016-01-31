@@ -13,7 +13,7 @@
   ],
   "main": "gravatar-component.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/fakiolinho/gravatar-component/",
+  "homepage": "http://fakiolinho.github.io/gravatar-component/components/gravatar-component/",
   "ignore": [
     "/.*",
     "/test/",
