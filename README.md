@@ -53,9 +53,9 @@ Then, go ahead and download the element's dependencies:
 | **defaultImage** | String | null | Custom default image as fallback |
 | **email** | String | null | The email address |
 | **hash** | String | null | Hashed Email |
-| **imageSet** | String | mm | Default imageset to use if not custom defaultImage is provided [ 404 | mm | identicon | monsterid | wavatar ] |
+| **imageSet** | String | mm | Default imageset to use if not custom defaultImage is provided [ 404 , mm , identicon , monsterid , wavatar ] |
 | **isUrl** | Boolean | false | False to return a complete IMG tag True for just the URL |
-| **rating** | String | g | Maximum rating (inclusive) [ g | pg | r | x ] |
+| **rating** | String | g | Maximum rating (inclusive) [ g , pg , r , x ] |
 | **secure** | Boolean | false | True for Https and False for Http |
 | **size** | Number | 80 | Size in pixels, defaults to 80px [ 1 - 2048 ] |
 
