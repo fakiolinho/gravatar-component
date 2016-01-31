@@ -28,11 +28,11 @@ Examples:
 
     <template>
         <template is="dom-if" if="[[!isUrl]]">
-            <img src="[[url]]" alt="[[altText]]" />
+            <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)]]" alt="[[altText]]" />
         </template>
 
         <template is="dom-if" if="[[isUrl]]">
-            [[url]]
+            [[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)]]
         </template>
     </template>
 
@@ -92,12 +92,6 @@ Examples:
                 secure: {
                     type: Boolean,
                     value: false
-                },
-
-                // Gravatar Url
-                url: {
-                    type: String,
-                    computed: '_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)'
                 },
 
                 // False to return a complete IMG tag True for just the URL
