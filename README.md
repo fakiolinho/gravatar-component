@@ -1,17 +1,15 @@
-# <gravatar-component>
+# gravatar-component
 
-An element providing a wrapper for quick gravatar images / urls.
+An element providing a wrapper for quick gravatar images.
 
-## Dependencies
+## How to Install
 
-Element dependencies are managed via [Bower](http://bower.io/). You can
-install that via:
+```
+bower i gravatar-component -S
+```
 
-    npm install -g bower
-
-Then, go ahead and download the element's dependencies:
-
-    bower install
+## Demo
+Test it [here](http://fakiolinho.github.io/gravatar-component/components/gravatar-component/)
 
 ## Usage
 
@@ -54,7 +52,6 @@ Then, go ahead and download the element's dependencies:
 | **email** | String | null | The email address |
 | **hash** | String | null | Hashed Email |
 | **imageSet** | String | mm | Default imageset to use if not custom defaultImage is provided [ 404 , mm , identicon , monsterid , wavatar ] |
-| **isUrl** | Boolean | false | False to return a complete IMG tag True for just the URL |
 | **rating** | String | g | Maximum rating (inclusive) [ g , pg , r , x ] |
 | **secure** | Boolean | false | True for Https and False for Http |
 | **size** | Number | 80 | Size in pixels, defaults to 80px [ 1 - 2048 ] |

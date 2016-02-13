@@ -4,7 +4,7 @@
   "authors": [
     "Fakiolas Marios <marios@mist.io>"
   ],
-  "description": "An element providing a wrapper for quick gravatar images / urls.",
+  "description": "An element providing a wrapper for quick gravatar images.",
   "keywords": [
     "web-component",
     "web-components",
@@ -13,7 +13,7 @@
   ],
   "main": "gravatar-component.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/fakiolinho/gravatar-component/",
+  "homepage": "http://fakiolinho.github.io/gravatar-component/components/gravatar-component/",
   "ignore": [
     "/.*",
     "/test/",
