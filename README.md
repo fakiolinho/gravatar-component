@@ -24,13 +24,13 @@ Then, go ahead and download the element's dependencies:
 2.Simple gravatar url with a custom fallback image:
 
 ```javascript
-<gravatar-component email="some@email.com" is-url default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+<gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
 ```
 
 3.Simple secure gravatar url:
 
 ```javascript
-<gravatar-component email="marios@mist.io" is-url secure></gravatar-component>
+<gravatar-component email="marios@mist.io" secure></gravatar-component>
 ```
 
 4.Simple gravatar image with monsterid images as fallbak
@@ -54,7 +54,6 @@ Then, go ahead and download the element's dependencies:
 | **email** | String | null | The email address |
 | **hash** | String | null | Hashed Email |
 | **imageSet** | String | mm | Default imageset to use if not custom defaultImage is provided [ 404 | mm | identicon | monsterid | wavatar ] |
-| **isUrl** | Boolean | false | False to return a complete IMG tag True for just the URL |
 | **rating** | String | g | Maximum rating (inclusive) [ g | pg | r | x ] |
 | **secure** | Boolean | false | True for Https and False for Http |
 | **size** | Number | 80 | Size in pixels, defaults to 80px [ 1 - 2048 ] |

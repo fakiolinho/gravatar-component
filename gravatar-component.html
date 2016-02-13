@@ -7,9 +7,9 @@ Examples:
 
     <gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"></gravatar-component>
 
-    <gravatar-component email="some@email.com" is-url default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+    <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
 
-    <gravatar-component email="marios@mist.io" is-url secure></gravatar-component>
+    <gravatar-component email="marios@mist.io" secure></gravatar-component>
 
     <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
 
@@ -27,13 +27,7 @@ Examples:
     </style>
 
     <template>
-        <template is="dom-if" if="[[!isUrl]]">
-            <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)]]" alt="[[altText]]" />
-        </template>
-
-        <template is="dom-if" if="[[isUrl]]">
-            [[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)]]
-        </template>
+        <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)]]" alt="[[altText]]" />
     </template>
 
     <script type="text/javascript" src="../js-md5/build/md5.min.js"></script>
@@ -90,12 +84,6 @@ Examples:
 
                 // True for Https and False for Http
                 secure: {
-                    type: Boolean,
-                    value: false
-                },
-
-                // False to return a complete IMG tag True for just the URL
-                isUrl: {
                     type: Boolean,
                     value: false
                 }
