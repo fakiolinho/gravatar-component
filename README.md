@@ -24,13 +24,13 @@ Then, go ahead and download the element's dependencies:
 2.Simple gravatar url with a custom fallback image:
 
 ```javascript
-<gravatar-component email="some@email.com" is-url default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+<gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
 ```
 
 3.Simple secure gravatar url:
 
 ```javascript
-<gravatar-component email="marios@mist.io" is-url secure></gravatar-component>
+<gravatar-component email="marios@mist.io" secure></gravatar-component>
 ```
 
 4.Simple gravatar image with monsterid images as fallbak
