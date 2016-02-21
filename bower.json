@@ -12,7 +12,7 @@
     "seed"
   ],
   "main": "gravatar-component.html",
-  "license": "http://polymer.github.io/LICENSE.txt",
+  "license": "MIT",
   "homepage": "http://fakiolinho.github.io/gravatar-component/components/gravatar-component/",
   "ignore": [
     "/.*",
