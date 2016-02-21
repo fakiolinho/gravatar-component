@@ -107,7 +107,7 @@ Examples:
         });
 
         function retinaReady(size, retina) {
-            return retina && window.devicePixelRatio < 1.5 ? 2 * size : size;
+            return retina && window.devicePixelRatio > 1.5 ? 2 * size : size;
         }
     </script>
 </dom-module>
