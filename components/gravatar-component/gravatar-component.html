@@ -9,11 +9,7 @@ Examples:
 
     <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
 
-<<<<<<< HEAD:components/gravatar-component/gravatar-component.html
-    <gravatar-component email="marios@mist.io" secure></gravatar-component>
-=======
     <gravatar-component email="marios@mist.io" retina secure></gravatar-component>
->>>>>>> master:gravatar-component.html
 
     <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
 
@@ -31,11 +27,7 @@ Examples:
     </style>
 
     <template>
-<<<<<<< HEAD:components/gravatar-component/gravatar-component.html
-        <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)]]" alt="[[altText]]" />
-=======
         <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure, retina)]]" width="[[size]]" height="[[size]]" alt="[[altText]]" />
->>>>>>> master:gravatar-component.html
     </template>
 
     <script type="text/javascript" src="../js-md5/build/md5.min.js"></script>
@@ -92,15 +84,12 @@ Examples:
                 secure: {
                     type: Boolean,
                     value: false
-<<<<<<< HEAD:components/gravatar-component/gravatar-component.html
-=======
                 },
 
                 // True for retina ready gravatar
                 retina: {
                     type: Boolean,
                     value: false
->>>>>>> master:gravatar-component.html
                 }
             },
 
