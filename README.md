@@ -25,10 +25,10 @@ Test it [here](http://fakiolinho.github.io/gravatar-component/components/gravata
 <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
 ```
 
-3.Simple secure gravatar url:
+3.Simple secure retina ready gravatar:
 
 ```javascript
-<gravatar-component email="marios@mist.io" secure></gravatar-component>
+<gravatar-component email="marios@mist.io" retina secure></gravatar-component>
 ```
 
 4.Simple gravatar image with monsterid images as fallbak
@@ -55,6 +55,7 @@ Test it [here](http://fakiolinho.github.io/gravatar-component/components/gravata
 | **rating** | String | g | Maximum rating (inclusive) [ g , pg , r , x ] |
 | **secure** | Boolean | false | True for Https and False for Http |
 | **size** | Number | 80 | Size in pixels, defaults to 80px [ 1 - 2048 ] |
+| **retina** | Boolean | false | True in order to check for retina screen and request a gravatar with double size |
 
 ## License
 

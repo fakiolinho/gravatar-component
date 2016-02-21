@@ -9,7 +9,7 @@ Examples:
 
     <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
 
-    <gravatar-component email="marios@mist.io" secure></gravatar-component>
+    <gravatar-component email="marios@mist.io" retina secure></gravatar-component>
 
     <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
 
@@ -27,7 +27,7 @@ Examples:
     </style>
 
     <template>
-        <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure)]]" alt="[[altText]]" />
+        <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure, retina)]]" width="[[size]]" height="[[size]]" alt="[[altText]]" />
     </template>
 
     <script type="text/javascript" src="../js-md5/build/md5.min.js"></script>
@@ -65,9 +65,7 @@ Examples:
                 // Size in pixels, defaults to 80px [ 1 - 2048 ]
                 size: {
                     type: Number,
-                    value: function() {
-                        return window.devicePixelRatio > 1.5 ? 160 : 80;
-                    }
+                    value: 80
                 },
 
                 // Default imageset to use if not custom defaultImage is provided [ 404 , mm , identicon , monsterid , wavatar ]
@@ -86,14 +84,20 @@ Examples:
                 secure: {
                     type: Boolean,
                     value: false
+                },
+
+                // True for retina ready gravatar
+                retina: {
+                    type: Boolean,
+                    value: false
                 }
             },
 
-            _computeUrl: function(email, hash, size, imageSet, rating, defaultImage, secure) {
+            _computeUrl: function(email, hash, size, imageSet, rating, defaultImage, secure, retina) {
                 var url = [
                     secure ? 'https://www.gravatar.com/avatar/' : 'http://www.gravatar.com/avatar/',
                     hash || md5(email.trim().toLowerCase()),
-                    '.jpg?s=' + size,
+                    '.jpg?s=' + retinaReady(size, retina),
                     '&d=' + (defaultImage ? encodeURIComponent(defaultImage) : imageSet),
                     '&r=' + rating
                 ].join('');
@@ -101,5 +105,9 @@ Examples:
                 return url;
             }
         });
+
+        function retinaReady(size, retina) {
+            return retina && window.devicePixelRatio < 1.5 ? 2 * size : size;
+        }
     </script>
 </dom-module>
