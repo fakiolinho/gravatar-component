@@ -18,41 +18,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../gravatar-component.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    .vertical-section-container:not([style-scope]):not(.style-scope) {
+    max-width: 900px;
+}
+    </style>
 </head>
 
 <body>
-    <p>An example of <code>&lt;gravatar-component&gt;</code>:</p>
+    <div class="vertical-section-container centered">
+        <p>An example of <code>&lt;gravatar-component&gt;</code>:</p>
 
 
-    <demo-snippet>
-        <template>
-            <gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"></gravatar-component>
-        </template>
-    </demo-snippet>
+        <demo-snippet>
+            <template>
+                <gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"></gravatar-component>
+            </template>
+        </demo-snippet>
 
-    <demo-snippet>
-        <template>
-            <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
-        </template>
-    </demo-snippet>
+        <demo-snippet>
+            <template>
+                <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+            </template>
+        </demo-snippet>
 
-    <demo-snippet>
-        <template>
-            <gravatar-component email="marios@mist.io" retina secure></gravatar-component>
-        </template>
-    </demo-snippet>
-    
-    <demo-snippet>
-        <template>
-            <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
-        </template>
-    </demo-snippet>
+        <demo-snippet>
+            <template>
+                <gravatar-component email="marios@mist.io" retina secure></gravatar-component>
+            </template>
+        </demo-snippet>
+        
+        <demo-snippet>
+            <template>
+                <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
+            </template>
+        </demo-snippet>
 
-    <demo-snippet>
-        <template>
-            <gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"></gravatar-component>
-        </template>
-    </demo-snippet>
+        <demo-snippet>
+            <template>
+                <gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"></gravatar-component>
+            </template>
+        </demo-snippet>
+    </div>
 </body>
 
 </html>
