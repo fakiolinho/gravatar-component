@@ -94,6 +94,8 @@ Examples:
             },
 
             _computeUrl: function(email, hash, size, imageSet, rating, defaultImage, secure, retina) {
+                if (!email && !hash) return null;
+                
                 var url = [
                     secure ? 'https://www.gravatar.com/avatar/' : 'http://www.gravatar.com/avatar/',
                     hash || md5(email.trim().toLowerCase()),
