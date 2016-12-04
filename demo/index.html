@@ -15,46 +15,52 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>gravatar-component Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../gravatar-component.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    .vertical-section-container:not([style-scope]):not(.style-scope) {
+    max-width: 900px;
+}
+    </style>
 </head>
 
 <body>
-    <p>An example of <code>&lt;gravatar-component&gt;</code>:</p>
+    <div class="vertical-section-container centered">
+        <p>An example of <code>&lt;gravatar-component&gt;</code>:</p>
 
-    <p>
-        <code>
-            &lt;gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"&gt;&lt;/gravatar-component&gt;
-        </code>
-    </p>
-    <gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"></gravatar-component>
 
-    <p>
-        <code>
-            &lt;gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"&gt;&lt;/gravatar-component&gt;
-        </code>
-    </p>
-    <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+        <demo-snippet>
+            <template>
+                <gravatar-component email="marios@mist.io" alt-text="Marios Fakiolas"></gravatar-component>
+            </template>
+        </demo-snippet>
 
-    <p>
-        <code>
-            &lt;gravatar-component email="marios@mist.io" retina secure&gt;&lt;/gravatar-component&gt;
-        </code>
-    </p>
-    <gravatar-component email="marios@mist.io" retina secure></gravatar-component>
+        <demo-snippet>
+            <template>
+                <gravatar-component email="some@email.com" default-image="http://webcomponents.org/img/icon-customelementsio.png" alt-text="Marios Fakiolas"></gravatar-component>
+            </template>
+        </demo-snippet>
 
-    <p>
-        <code>
-            &lt;gravatar-component email="some@email.com" image-set="monsterid"&gt;&lt;/gravatar-component&gt;
-        </code>
-    </p>
-    <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
+        <demo-snippet>
+            <template>
+                <gravatar-component email="marios@mist.io" retina secure></gravatar-component>
+            </template>
+        </demo-snippet>
+        
+        <demo-snippet>
+            <template>
+                <gravatar-component email="some@email.com" image-set="monsterid"></gravatar-component>
+            </template>
+        </demo-snippet>
 
-    <p>
-        <code>
-            &lt;gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"&gt;&lt;/gravatar-component&gt;
-        </code>
-    </p>
-    <gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"></gravatar-component>
+        <demo-snippet>
+            <template>
+                <gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"></gravatar-component>
+            </template>
+        </demo-snippet>
+    </div>
 </body>
 
 </html>
