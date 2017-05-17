@@ -15,22 +15,22 @@ Examples:
 
     <gravatar-component hash="64fbed45615b9b322e2f0dbeadfe97a9" size="200"></gravatar-component>
 
-@demo
+@element gravatar-component
+@demo demo/index.html
 -->
 <dom-module id="gravatar-component">
-
-    <style>
-        :host {
-            display: block;
-            box-sizing: border-box;
-        }
-
-        img {
-            @apply(--gravatar-component-img);
-        }
-    </style>
-
     <template>
+        <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+            }
+
+            img {
+                @apply --gravatar-component-img;
+            }
+        </style>
+
         <img src="[[_computeUrl(email, hash, size, imageSet, rating, defaultImage, secure, retina)]]" width="[[size]]" height="[[size]]" alt="[[altText]]" />
     </template>
 
