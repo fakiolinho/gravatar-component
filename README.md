@@ -5,7 +5,7 @@ An element providing a wrapper for quick gravatar images.
 ## How to Install
 
 ```
-bower i gravatar-component -S
+npm install --save gravatar-component
 ```
 
 ## Demo
