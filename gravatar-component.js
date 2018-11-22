@@ -94,6 +94,8 @@ class GravatarComponent extends LitElement {
             }
 
             img {
+                border-radius: var(--gravatar-component-border-radius);
+
                 @apply --gravatar-component-img;
             }
         </style>
