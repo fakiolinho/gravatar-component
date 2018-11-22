@@ -14,24 +14,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
 
-    <!-- Step 1: import the element to test -->
-    <link rel="import" href="../gravatar-component.html">
+    <script type="module" src="../gravatar-component.js"></script>
 </head>
 
 <body>
 
-    <!-- You can use the document as a place to set up your fixtures. -->
-    <gravatar-component></gravatar-component>
+    <test-fixture id="BasicTestFixture">
+        <template>
+            <gravatar-component></gravatar-component>
+        </template>
+    </test-fixture>
 
-    <script>
-        var myEl = document.querySelector('gravatar-component');
+    <script type="module">
+        const myEl = fixture('BasicTestFixture');
 
-        suite('<gravatar-component>', function() {
-
-            test('basic gravatar url', function() {
+        suite('gravatar-component', () => {
+            test('basic gravatar url', () => {
                 myEl.email = 'marios@mist.io';
                 assert.equal(myEl.url, 'http://www.gravatar.com/avatar/64fbed45615b9b322e2f0dbeadfe97a9.jpg?s=80&d=mm&r=g');
             });
@@ -49,10 +50,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 myEl.imageSet = 'monsterid';
                 assert.equal(myEl.url, 'http://www.gravatar.com/avatar/64fbed45615b9b322e2f0dbeadfe97a9.jpg?s=200&d=monsterid&r=g');
             });
-
         });
     </script>
-
 </body>
-
 </html>
