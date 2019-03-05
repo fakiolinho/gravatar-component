@@ -21,7 +21,7 @@ Examples:
   from HTML and may be out of place here. Review them and
   then delete this comment!
 */
-import { LitElement, html } from '@polymer/lit-element'; 
+import { LitElement, html } from 'lit-element'; 
 import md5  from 'blueimp-md5-es6/js/md5';
 
 class GravatarComponent extends LitElement {
